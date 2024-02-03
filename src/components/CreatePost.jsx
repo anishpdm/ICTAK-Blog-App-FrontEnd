@@ -11,10 +11,10 @@ const CreatePost = () => {
 
 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
 
-<textarea name="" id="" cols="30" rows="10" className="form-control"></textarea>
+<textarea name="" id="" cols="30" rows="5" className="form-control"></textarea>
 
 </div>
-<div className="row g-3 col-12 col-sm-12 col-md-12 col-lg-12">
+<div className="col col-12 col-sm-12 col-md-12 col-lg-12">
 <button className="btn btn-warning"> Create a Post</button>
 </div>
 
