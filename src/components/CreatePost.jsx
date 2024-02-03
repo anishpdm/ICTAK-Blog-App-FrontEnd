@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogHeader from './BlogHeader'
+import ViewMyPost from './ViewMyPost'
 
 const CreatePost = () => {
   return (
@@ -28,6 +29,18 @@ const CreatePost = () => {
 
                 </div>
             </div>
+
+
+
+<div className="row">
+    <div className="col col-12 col-sm-12 col-md-12">
+
+
+     
+    </div>
+</div>
+
+
         </div>
     </div>
   )
