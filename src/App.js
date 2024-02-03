@@ -2,16 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CreatePost from './components/CreatePost';
+import ViewAllPosts from './components/ViewAllPosts';
+import ViewMyPost from './components/ViewMyPost';
 
 function App() {
   return (
-    <div>
-     
-<SignIn />
+  
+<BrowserRouter>
+<Routes>
 
-<SignUp /> 
+    <Route path='/' element={<SignIn/> } /> 
+    <Route path='/signup' element={<SignUp/> } /> 
+    <Route path='/create' element={<CreatePost/> } /> 
+    <Route path='/viewall' element={<ViewAllPosts/> } /> 
+    <Route path='/viewmypost' element={<ViewMyPost/> } /> 
+  
 
-    </div>
+</Routes>
+
+</BrowserRouter>
+
   );
 }
 
