@@ -1,8 +1,12 @@
 import React from 'react'
+import BlogHeader from './BlogHeader'
 
 const ViewAllPosts = () => {
   return (
-    <div>ViewAllPosts</div>
+    <div>
+            <BlogHeader /> 
+
+ViewAllPosts</div>
   )
 }
 

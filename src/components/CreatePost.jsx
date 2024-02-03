@@ -1,8 +1,12 @@
 import React from 'react'
+import BlogHeader from './BlogHeader'
 
 const CreatePost = () => {
   return (
     <div>
+
+        <BlogHeader />
+        <br />
 
         <div className="container">
             <div className="row">
