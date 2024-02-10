@@ -1,7 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const BlogHeader = () => {
+  const nav=useNavigate()
+
+  const LogOutAction=()=>{
+    sessionStorage.clear()
+    nav("/")
+  }
+
+  useEffect(
+    ()=>{
+
+      let uid=sessionStorage.getItem("userId")
+      if(uid===null || uid===undefined)
+      {
+nav("/")
+      }
+
+    }
+  )
+
   return (
     <div>
 
@@ -16,7 +35,7 @@ const BlogHeader = () => {
         <Link class="nav-link active" aria-current="page" to="/create">Home</Link>
         <Link class="nav-link" to="/viewall">View All Posts</Link>
         <Link class="nav-link" to="/viewmypost">View My Posts</Link>
-        <Link class="nav-link" to="/">LogOut</Link>
+        <span class="nav-link"  onClick={LogOutAction} >LogOut</span>
       </div>
     </div>
   </div>

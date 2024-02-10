@@ -1,13 +1,15 @@
 
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
 
+    const navigate= useNavigate();
+
     const [input,setInput]=new useState(
         {
-        "Username":"",
+        "email":"",
         "password":""
     }
     )
@@ -19,14 +21,18 @@ const SignIn = () => {
     const readValue = ()=>{
         console.log(input)
 
-        axios.post("http://172.16.180.115:3000/login",input).then(
+        axios.post("http://localhost:8080/login",input).then(
             (response)=>{
                console.log(response.data) 
-             //  {"status":"success"}
+            
 
              if (response.data.status=="success") {
-                alert("invalid credentials")
-                // page navigation
+                console.log(response.data.userId)
+
+                sessionStorage.setItem("userId",response.data.userId )
+
+                navigate("/create")
+
              } else {
                 alert("invalid credentials")
              }
@@ -57,8 +63,8 @@ const SignIn = () => {
     <div className="row g-3">
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
 
-            <label htmlFor="" className="form-label"> Username </label>
-            <input onChange={inputHandler} type="text" className="form-control" name='Username' value={input.Username} />
+            <label htmlFor="" className="form-label"> E-mail Id </label>
+            <input onChange={inputHandler} type="text" className="form-control" name='email' value={input.email} />
 
         </div>
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">

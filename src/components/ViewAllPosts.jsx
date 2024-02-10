@@ -6,7 +6,7 @@ const ViewAllPosts = () => {
     var [data,setData]=new useState(  [ ] )
 
     const fetchData= ()=>{
-        axios.get("https://jsonplaceholder.typicode.com/posts").then(
+        axios.post("http://localhost:8080/viewAllPosts").then(
             (response)=>{
                 console.log(response.data)
                 setData(response.data)
@@ -42,9 +42,9 @@ const ViewAllPosts = () => {
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title"> {value.title} </h5>
-            <p class="card-text"> {value.body}</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated {value.userId} </small></p>
+            <h5 class="card-title"> {value.name} </h5>
+            <p class="card-text"> {value.message}</p>
+            <p class="card-text"><small class="text-body-secondary">Posted from {value.email} </small></p>
           </div>
         </div>
       </div>
