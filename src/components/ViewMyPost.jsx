@@ -4,7 +4,9 @@ import axios from 'axios'
 
 const ViewMyPost = () => {
   const [input,setInput]=useState(
-    { "id": sessionStorage.getItem("userId") })
+    { "id": sessionStorage.getItem("userId"),
+    "token":sessionStorage.getItem("token")
+  })
 
   const [data,setData]=useState([])  
 

@@ -14,7 +14,8 @@ const CreatePost = () => {
     {
 
       "UserId": sessionStorage.getItem("userId"),
-      "message":""
+      "message":"",
+      "token":sessionStorage.getItem("token")
     
     }
     

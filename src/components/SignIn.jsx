@@ -30,6 +30,7 @@ const SignIn = () => {
                 console.log(response.data.userId)
 
                 sessionStorage.setItem("userId",response.data.userId )
+                sessionStorage.setItem("token",response.data.token )
 
                 navigate("/create")
 
